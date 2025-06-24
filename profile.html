@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouBook - Profile</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .banner {
+      width: 100%;
+      height: 150px;
+      background: #ccc;
+      position: relative;
+    }
+    .banner input {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid white;
+      position: absolute;
+      top: 100px;
+      left: 20px;
+      background: #eee;
+      overflow: hidden;
+    }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profile-pic input {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      height: 100%;
+      cursor: pointer;
+    }
+    .info {
+      padding: 80px 20px 10px 20px;
+    }
+    .info h2, .info p {
+      margin: 5px 0;
+    }
+    .section-title {
+      margin: 20px 20px 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .book-list {
+      padding: 10px 20px 70px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 15px;
+    }
+    .book-card {
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+    }
+    .book-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      background: white;
+      border-top: 1px solid #ccc;
+      justify-content: space-around;
+      padding: 8px 0;
+    }
+    .navbar a {
+      color: #333;
+      text-decoration: none;
+      text-align: center;
+      font-size: 12px;
+    }
+    .navbar a.active {
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+  <header>YouBook Profile</header>
+
+  <div class="banner">
+    <input type="file" accept="image/*" title="Upload Banner" />
+    <!-- You can show banner image here using background-image if needed -->
+  </div>
+
+  <div class="profile-pic">
+    <img src="user-dp.png" alt="User DP" />
+    <input type="file" accept="image/*" title="Upload DP" />
+  </div>
+
+  <div class="info">
+    <h2>@jay_user</h2>
+    <p>User ID: 123456</p>
+  </div>
+
+  <div class="section-title">Your Audiobooks</div>
+  <div class="book-list">
+    <div class="book-card" onclick="playAudio('audio1.mp3')">
+      <img src="thumb1.jpg" alt="Book 1" />
+      <p>My Motivational Book</p>
+    </div>
+    <div class="book-card" onclick="playAudio('audio2.mp3')">
+      <img src="thumb2.jpg" alt="Book 2" />
+      <p>My Gita Audio</p>
+    </div>
+  </div>
+
+  <div id="player" style="padding: 10px; display:none;">
+    <audio controls autoplay id="audioPlayer"></audio>
+  </div>
+
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="book.html">Book</a>
+    <a href="upload.html">Upload</a>
+    <a href="notification.html">Notification</a>
+    <a href="profile.html" class="active">Profile</a>
+  </div>
+
+  <script>
+    function playAudio(file) {
+      const player = document.getElementById('player');
+      const audio = document.getElementById('audioPlayer');
+      audio.src = file;
+      player.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
