@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouBook - Books</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .book-list {
+      padding: 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 15px;
+    }
+    .book-card {
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      text-align: center;
+    }
+    .book-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      background: white;
+      border-top: 1px solid #ccc;
+      justify-content: space-around;
+      padding: 8px 0;
+    }
+    .navbar a {
+      color: #333;
+      text-decoration: none;
+      text-align: center;
+      font-size: 12px;
+    }
+    .navbar a.active {
+      color: #007BFF;
+    }
+    audio {
+      width: 100%;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>YouBook</header>
+
+  <div class="book-list" id="bookList">
+    <div class="book-card" onclick="playAudio('audio1.mp3')">
+      <img src="thumb1.jpg" alt="Book 1" />
+      <p>Motivation Book</p>
+    </div>
+    <div class="book-card" onclick="playAudio('audio2.mp3')">
+      <img src="thumb2.jpg" alt="Book 2" />
+      <p>Horror Book</p>
+    </div>
+    <div class="book-card" onclick="playAudio('audio3.mp3')">
+      <img src="thumb3.jpg" alt="Book 3" />
+      <p>Ramayan Book</p>
+    </div>
+  </div>
+
+  <div id="player" style="display:none; padding: 10px;">
+    <audio controls autoplay id="audioPlayer"></audio>
+  </div>
+
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="book.html" class="active">Book</a>
+    <a href="upload.html">Upload</a>
+    <a href="notification.html">Notification</a>
+    <a href="profile.html">Profile</a>
+  </div>
+
+  <script>
+    function playAudio(file) {
+      const player = document.getElementById('player');
+      const audio = document.getElementById('audioPlayer');
+      audio.src = file;
+      player.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
