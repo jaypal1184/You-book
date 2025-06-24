@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouBook - Upload</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+    form {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    input[type="file"] {
+      padding: 8px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      background: white;
+      border-top: 1px solid #ccc;
+      justify-content: space-around;
+      padding: 8px 0;
+    }
+    .navbar a {
+      color: #333;
+      text-decoration: none;
+      text-align: center;
+      font-size: 12px;
+    }
+    .navbar a.active {
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+  <header>YouBook Upload</header>
+
+  <form id="uploadForm">
+    <input type="text" placeholder="Title" id="title" required />
+    <textarea placeholder="Description" id="description" rows="3"></textarea>
+    <input type="text" placeholder="#Hashtags (comma separated)" id="hashtags" />
+    <input type="text" placeholder="Location" id="location" />
+    
+    <label>Upload Thumbnail</label>
+    <input type="file" id="thumbnail" accept="image/*" required />
+    
+    <label>Upload Audio File</label>
+    <input type="file" id="audioFile" accept="audio/*" required />
+    
+    <button type="submit">Upload Audio Book</button>
+  </form>
+
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="book.html">Book</a>
+    <a href="upload.html" class="active">Upload</a>
+    <a href="notification.html">Notification</a>
+    <a href="profile.html">Profile</a>
+  </div>
+
+  <script>
+    // Firebase integration will be added later
+    const form = document.getElementById('uploadForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Upload function Firebase se connect karna baaki hai.");
+    });
+  </script>
+
+</body>
+</html>
