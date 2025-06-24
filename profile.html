@@ -153,7 +153,17 @@
       const audio = document.getElementById('audioPlayer');
       audio.src = file;
       player.style.display = 'block';
+    }// profile.html के </body> से पहले ये स्क्रिप्ट डालें
+<script src="js/firebase-config.js"></script>
+<script>
+  auth.onAuthStateChanged(user => {
+    if (!user) {
+      window.location.href = "login.html";
+    } else {
+      document.getElementById("userName").textContent = user.email;
     }
+  });
+</script>
   </script>
 
 </body>
