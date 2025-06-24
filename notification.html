@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouBook - Notifications</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .notifications {
+      padding: 15px;
+    }
+    .note {
+      background: white;
+      margin-bottom: 10px;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      background: white;
+      border-top: 1px solid #ccc;
+      justify-content: space-around;
+      padding: 8px 0;
+    }
+    .navbar a {
+      color: #333;
+      text-decoration: none;
+      text-align: center;
+      font-size: 12px;
+    }
+    .navbar a.active {
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+  <header>YouBook Notifications</header>
+
+  <div class="notifications" id="notificationList">
+    <!-- Firebase se notification add hogi yahan -->
+    <div class="note">🔥 New audiobook uploaded: *Ramayan Part 1*</div>
+    <div class="note">🎧 Your upload has been approved</div>
+    <div class="note">📢 Don't miss our new Horror series!</div>
+  </div>
+
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="book.html">Book</a>
+    <a href="upload.html">Upload</a>
+    <a href="notification.html" class="active">Notification</a>
+    <a href="profile.html">Profile</a>
+  </div>
+
+  <script>
+    // Firebase notification fetching logic will go here
+    // Example code (future use):
+    // firebase.database().ref("notifications").on("value", snapshot => {
+    //   updateNotificationList(snapshot.val());
+    // });
+  </script>
+
+</body>
+</html>
